@@ -1,6 +1,8 @@
 /* ROOT */
 :root {
 --bg-cont-color: #D9DBD5;
+--header-color: #EAEAEA;
+--cta-notification-color: #8edafc;
 }
 
 
@@ -13,21 +15,10 @@
   
 img {
 max-width: 100%;
+border-radius: 50px;
 }
-  
-/* COMMON */
-body {
-font-family: sans-serif;
-overflow: hidden;
-}
-
-.flex {
-    display: flex;
-}
-  
+    
 /* Layout */
-
-
 .wrapper {
 width: 100%;
 height: 100vh;
@@ -36,12 +27,11 @@ padding: 2rem 4rem;
 background-color: var(--bg-cont-color);
 }
 
-
 .app-container {
     border: 1px solid black;
 }
 
-.contacts-col {
+.chats-col {
     width: 30%;
     /* debug */
     border: 1px solid black;
@@ -50,7 +40,7 @@ background-color: var(--bg-cont-color);
     height: calc(100vh - 4rem);
     }
 
-.chat-col {
+.convo-col {
     width: 70%;
     border: 1px solid black;
     background-color: green;
@@ -58,7 +48,26 @@ background-color: var(--bg-cont-color);
     height: calc(100vh - 4rem);
 }
 
-/* RESPONSIVE - 540px */
+.flex {
+    display: flex;
+}
+
+/* COMMON */
+body {
+    font-family: sans-serif;
+    overflow: hidden;
+    }
+
+.header {
+    height: 3rem;
+    background-color: var(--header-color);
+    justify-content: space-between;
+    padding: .5rem;
+}
+
+
+
+/* LAYOUT  RESPONSIVE - 540px */
 
 @media screen and (max-width: 540px) {
     .wrapper {
@@ -69,26 +78,78 @@ background-color: var(--bg-cont-color);
         width: 100%;  
     } 
 
-    .contacts-col {
+    .chats-col {
         width: 20%;
         height: 100vh;
     }
 
-    .chat-col {
+    .convo-col {
         width: 80%;
         height: 100vh;
     }
 }
 
-/* RESPONSIVE - MOBILE 375px */
+/* LAYOUT RESPONSIVE - MOBILE 375px */
 
 @media screen and (max-width: 375px) {
-    .contacts-col {
+    .chats-col {
         display: none;
     }
 
-    .chat-col {
+    .convo-col {
         width: 100%;
-        /* height: 100vh; */
     }
+}
+
+/* APP - CONTENT */
+
+/* CHATS-HEADER and CONVO HEADER*/
+
+.header-icons {
+    align-items: center;
+    gap: 1rem;
+}
+
+.convo-contact {
+    color: gray;
+}
+
+.contact {
+    font-size: .9rem;
+}
+
+.last-seen {
+    font-size: .7rem;
+}
+
+/* HEADER RESPONSIVE - HEADER - 540PX */
+
+@media screen and (max-width: 540px) {
+    .chats-icons {
+        display: none;
+    }
+}
+
+/* HEADER RESPONSIVE - MOBILE 375px */
+@media screen and (max-width: 375px) {
+    .convo-icons {
+        display: none;
+    }
+}
+
+/* CHATS COLUMN */
+
+.cta-notifications {
+    height: 4rem;
+    background-color: var(--cta-notification-color);
+    padding: .5rem;
+}
+
+.bell {
+    border-radius: 50px;
+    background-color: white;
+    /* border: 1px solid black; */
+    display: inline-block;
+    padding: .5rem;
+    font-size: 1rem;
 }
