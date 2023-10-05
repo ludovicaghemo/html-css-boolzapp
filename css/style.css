@@ -11,11 +11,14 @@
 --wrapper-padding-lr: 4rem;
 --header-padding: .5rem;
 --header-height: 65px;
+--footer-height: 65px;
 --profile-pic-btn-height: 50px;
 --profile-pic-btn-width: 50px; 
 --icon-font-size: 1.4rem; 
 --search-bar-height: 2rem;
 --single-chat-height: 65px;
+--textarea-height: 50px;
+
 }
 
 
@@ -284,3 +287,45 @@ body {
     }
 }
 
+/* MAIN */
+
+main {
+    height: calc(100% - var(--header-height) - var(--footer-height));
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    height: var(--footer-height);
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: var(--header-color);
+}
+
+
+.footer-icons {
+    font-size: 1.5rem; 
+    color: var(--dark-gray-color);
+} 
+
+.message {
+    width: 100%;
+}
+textarea {
+    height: var(--textarea-height);
+    width: 100%;
+    margin: .5rem;
+    resize: none;
+    border-radius: 5px;
+    border: var(--bg-cont-color);
+
+}
+
+/* RESPONSIVE - FOOTER - NEW-MESSAGE - 375px */
+@media screen and (max-width: 375px) {
+    .footer-icons {
+        display: none;
+    }
+}
