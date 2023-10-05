@@ -3,16 +3,19 @@
 --bg-cont-color: #D9DBD5;
 --header-color: #EAEAEA;
 --dark-gray-color: rgb(66, 66, 66);
+--chat-info-color: #b7b7b7;
 --cta-notification-color: #8edafc;
 --cta-notification-height: 65px;
 --cta-notification-padding: .7rem;
 --wrapper-padding-tb: 2rem;
 --wrapper-padding-lr: 4rem;
+--header-padding: .5rem;
 --header-height: 65px;
---header-padding: .5rem; 
 --profile-pic-btn-height: 50px;
 --profile-pic-btn-width: 50px; 
 --icon-font-size: 1.4rem; 
+--search-bar-height: 2rem;
+--single-chat-height: 65px;
 }
 
 
@@ -44,16 +47,17 @@ background-color: var(--bg-cont-color);
     border: 1px solid black;
     /* width: 80%; */
     /* height: 95%; */
+    /* margin: 0 auto; */
 }
 
 .chats-col {
     width: 30%;
+    height: calc(100vh - var(--wrapper-padding-tb));
     /* debug */
     border: 1px solid black;
     background-color: blueviolet;
     overflow-y: scroll;
-    height: calc(100vh - var(--wrapper-padding-tb));
-    }
+}
 
 .convo-col {
     width: 70%;
@@ -61,7 +65,7 @@ background-color: var(--bg-cont-color);
     border: 1px solid black;
     background-color: green;
     overflow-y: scroll;
-    height: calc(100vh - var(--wrapper-padding));
+    height: calc(100vh - var(--wrapper-padding-tb));
 }
 
 .flex {
@@ -165,8 +169,9 @@ body {
     color: var(--dark-gray-color);
 }
 
-.last-seen {
+.time {
     font-size: .7rem;
+    color: var(--chat-info-color);
 }
 
 
@@ -234,3 +239,48 @@ body {
         display: none;
     }
 }
+
+
+/* CHATS LIST */
+.chats-list {
+    height: calc(100% - var(--header-height) - var(--cta-notification-height) var(--search-bar-height) - var(--cta-notification-padding) - var(--header-padding) - var(--wrapper-padding-tb));
+}
+
+
+.single-chat {
+    width: 100%;
+    height: var(--single-chat-height);
+    border: 1px solid #F5F5F5;
+    background-color:white;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    padding: .5rem;
+}
+
+.chat-info {
+    padding: .5rem;
+}
+
+.chat-preview {
+    font-size: .7rem;
+    color: var(--chat-info-color);
+}
+
+
+
+/* RESPONSIVE - CHATS LIST - 540px */
+@media screen and (max-width: 540px) {
+    .chat-info,
+    .chat-time {
+        display: none;
+    }
+}
+
+/* RESPONSIVE - CHATS LIST - 375px */
+@media screen and (max-width: 375px) {
+    .single-chat {
+        display: none;
+    }
+}
+
