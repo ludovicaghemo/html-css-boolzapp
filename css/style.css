@@ -211,3 +211,26 @@ body {
         display: none;
     }
 }
+
+/* SEARCH BAR */
+
+.search-bar {
+    border: 1px solid #F5F5F5;
+    background-color: white;
+    height: 2rem;
+    align-items: center;
+    padding: .5rem;
+}
+
+#search {
+    margin-left: .5rem;
+    width: 100%;
+    border: none;
+}
+
+/* RESPONSIVE - SEARCH BAR - 540px */
+@media screen and (max-width: 540px) {
+    .search-bar {
+        display: none;
+    }
+}
