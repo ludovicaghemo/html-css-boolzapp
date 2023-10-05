@@ -2,9 +2,10 @@
 :root {
 --bg-cont-color: #D9DBD5;
 --header-color: #EAEAEA;
+--dark-gray-color: rgb(66, 66, 66);
 --cta-notification-color: #8edafc;
---cta-notification-height: 4rem;
---cta-notification-padding: .5rem;
+--cta-notification-height: 65px;
+--cta-notification-padding: .7rem;
 --wrapper-padding-tb: 2rem;
 --wrapper-padding-lr: 4rem;
 --header-height: 65px;
@@ -87,13 +88,19 @@ body {
 .btn {
     border: none;
     background-color: transparent;
+    border-radius: 50px;
 }
 
 .profile-pic-btn {
-    border-radius: 50px;
     height: var(--profile-pic-btn-height);
     width: var(--profile-pic-btn-width);
     background-color: white;
+}
+
+.bell {
+    background-color: white;
+    padding: .5rem .7rem;
+    font-size: 1rem;
 }
 
 /* LAYOUT  RESPONSIVE - 540px */
@@ -137,7 +144,7 @@ body {
 
 .header-icons {
     align-items: center;
-    gap: .5rem;
+    gap: 1rem;
 }
 
 .header-icons li {
@@ -155,7 +162,7 @@ body {
 
 .contact {
     font-size: .9rem;
-    color: rgb(66, 66, 66);
+    color: var(--dark-gray-color);
 }
 
 .last-seen {
@@ -181,17 +188,26 @@ body {
 
 /* CHATS COLUMN */
 
+/* CTA-NOTIFICATIONS */
+
 .cta-notifications {
     height: var(--cta-notification-height);
     background-color: var(--cta-notification-color);
     padding: var(--cta-notification-padding);
 }
 
-.bell {
-    border-radius: 50px;
-    background-color: white;
-    /* border: 1px solid black; */
-    display: inline-block;
-    padding: .5rem;
-    font-size: 1rem;
+.notifications-content {
+    margin: .7rem .5rem;
+    font-size: .7rem;
+}
+
+.notifications-content a {
+    color: gray;
+}
+
+/* RESPONSIVE - CTA-NOTIFICATIONS - 540px */
+@media screen and (max-width: 540px) {
+    .cta-notifications {
+        display: none;
+    }
 }
