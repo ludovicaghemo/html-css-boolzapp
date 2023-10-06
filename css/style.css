@@ -18,6 +18,8 @@
 --search-bar-height: 2rem;
 --single-chat-height: 65px;
 --textarea-height: 50px;
+--wrap-green-bg:#009688;
+--wrap-gray-bg: #d3dbda;
 
 }
 
@@ -42,8 +44,7 @@ padding: var(--wrapper-padding-lr);
 display: flex;
 justify-content: center;
 align-items: center;
-/* debug */
-background-color: var(--bg-cont-color);
+background: linear-gradient(180deg, var(--wrap-green-bg) 15%, var(--wrap-gray-bg) 15%);
 }
 
 .app-container {
