@@ -1,26 +1,33 @@
 /* ROOT */
 :root {
+
+/* COLORS */
 --bg-cont-color: #D9DBD5;
 --header-color: #EAEAEA;
 --dark-gray-color: rgb(66, 66, 66);
 --chat-info-color: #b7b7b7;
 --cta-notification-color: #8edafc;
+--wrap-green-bg:#009688;
+--wrap-gray-bg: #d3dbda;
+--sent-text-color: #D5F9BA;
+--received-text-color: white;
+
+/* HEIGHTS AND WIDTHS + FONT SIZES */
 --cta-notification-height: 65px;
+--header-height: 65px;
+--footer-height: 65px;
+--profile-pic-btn-height: 50px;
+--search-bar-height: 45px;
+--single-chat-height: 65px;
+--textarea-height: 50px;
+--profile-pic-btn-width: 50px; 
+--icon-font-size: 1.4rem; 
+
+/* PADDINGS */
 --cta-notification-padding: .7rem;
 --wrapper-padding-tb: 2rem;
 --wrapper-padding-lr: 4rem;
 --header-padding: .5rem;
---header-height: 65px;
---footer-height: 65px;
---profile-pic-btn-height: 50px;
---profile-pic-btn-width: 50px; 
---icon-font-size: 1.4rem; 
---search-bar-height: 2rem;
---single-chat-height: 65px;
---textarea-height: 50px;
---wrap-green-bg:#009688;
---wrap-gray-bg: #d3dbda;
-
 }
 
 
@@ -40,16 +47,17 @@ border-radius: 50px;
 .wrapper {
 width: 100%;
 height: 100vh;
-padding: var(--wrapper-padding-lr);
+/* padding: var(--wrapper-padding-lr); */
 display: flex;
 justify-content: center;
 align-items: center;
 background: linear-gradient(180deg, var(--wrap-green-bg) 15%, var(--wrap-gray-bg) 15%);
+
 }
 
 .app-container {
     border: 1px solid black;
-    /* width: 80%; */
+    width: 80%;
     /* height: 95%; */
     /* margin: 0 auto; */
 }
@@ -57,10 +65,11 @@ background: linear-gradient(180deg, var(--wrap-green-bg) 15%, var(--wrap-gray-bg
 .chats-col {
     width: 30%;
     height: calc(100vh - var(--wrapper-padding-tb));
+    /* height: 100vh; */
     /* debug */
     border: 1px solid black;
     background-color: blueviolet;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .convo-col {
@@ -68,8 +77,8 @@ background: linear-gradient(180deg, var(--wrap-green-bg) 15%, var(--wrap-gray-bg
     /* debug */
     border: 1px solid black;
     background-color: green;
-    overflow-y: scroll;
     height: calc(100vh - var(--wrapper-padding-tb));
+    /* height: 100vh; */
 }
 
 .flex {
@@ -183,6 +192,10 @@ body {
 /* HEADER RESPONSIVE - HEADER - 540PX */
 
 @media screen and (max-width: 540px) {
+    .header {
+        justify-content: center;
+    }
+    
     .chats-icons .icon {
         display: none;
     }
@@ -226,7 +239,7 @@ body {
 .search-bar {
     border: 1px solid #F5F5F5;
     background-color: white;
-    height: 2rem;
+    height: var(--search-bar-height);
     align-items: center;
     padding: .5rem;
 }
@@ -246,10 +259,10 @@ body {
 
 
 /* CHATS LIST */
-.chats-list {
-    height: calc(100% - var(--header-height) - var(--cta-notification-height) var(--search-bar-height) - var(--cta-notification-padding) - var(--header-padding) - var(--wrapper-padding-tb));
+.chat-container {
+    height: calc(100% - (var(--header-height) + var(--search-bar-height) + var(--cta-notification-height))); 
+    overflow-y: scroll;
 }
-
 
 .single-chat {
     width: 100%;
@@ -279,6 +292,11 @@ body {
     .chat-time {
         display: none;
     }
+
+    .chat-container {
+        height: calc(100% - var(--header-height)); 
+        /* overflow-y: scroll; */
+    }
 }
 
 /* RESPONSIVE - CHATS LIST - 375px */
@@ -288,10 +306,66 @@ body {
     }
 }
 
-/* MAIN */
+/* MAIN CONVO */
+
+.conversation {
+    height: calc(100% - var(--header-height) - var(--footer-height)); 
+    background-image: url(../img/mine.jpg);
+    overflow-y: scroll; 
+}
 
 main {
-    height: calc(100% - var(--header-height) - var(--footer-height));
+    width: 100%;
+    padding: 20px;    
+}
+
+.main-text {
+    flex-wrap: wrap;
+    flex-direction: column;  
+}
+
+.text {
+    max-width: 55%;
+    min-width: 250px;
+    margin: .5rem 2rem;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+}
+
+.angle {
+    color: var(--chat-info-color);
+    text-align: right;
+}
+
+.text-time {
+   text-align: right;
+}
+
+.sent {
+    background-color: var(--sent-text-color);
+    align-self: self-end;
+}
+
+.received {
+    background-color: var(--received-text-color);
+    align-self: self-start;
+}
+
+.text-info {
+    background-color: white;
+    padding: .5rem;
+    text-align: center;
+    box-shadow: 2px 2px 5px lightblue;
+    font-size: .8rem;
+    position: relative;
+    top: 5px;
+    left: 150px;
+    z-index: 2;
+    display: none;
+}
+
+.angle:hover + .text-info {
+    display: inline-block;
 }
 
 /* FOOTER */
@@ -321,6 +395,7 @@ textarea {
     resize: none;
     border-radius: 5px;
     border: var(--bg-cont-color);
+    padding: 1rem;
 
 }
 
