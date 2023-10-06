@@ -328,6 +328,7 @@ main {
     margin: .5rem 2rem;
     padding: .5rem 1rem;
     border-radius: 5px;
+    position: relative;
 }
 
 .angle {
@@ -355,9 +356,9 @@ main {
     text-align: center;
     box-shadow: 2px 2px 5px lightblue;
     font-size: .8rem;
-    position: relative;
-    top: 5px;
-    left: 150px;
+    position: absolute;
+    top: 30px;
+    right: 10px;
     z-index: 2;
     display: none;
 }
