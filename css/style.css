@@ -6,6 +6,7 @@
 --header-color: #EAEAEA;
 --dark-gray-color: rgb(66, 66, 66);
 --chat-info-color: #b7b7b7;
+--single-chat-hover: #F4F5F5;
 --cta-notification-color: #8edafc;
 --wrap-green-bg:#009688;
 --wrap-gray-bg: #d3dbda;
@@ -276,6 +277,10 @@ body {
 .chat-preview {
     font-size: .7rem;
     color: var(--chat-info-color);
+}
+
+.single-chat:hover {
+    background-color: var(--single-chat-hover);
 }
 
 
