@@ -42,6 +42,10 @@ img {
 max-width: 100%;
 border-radius: 50px;
 }
+
+label {
+    display: none;
+}
     
 /* Layout */
 .wrapper {
@@ -56,7 +60,6 @@ background: linear-gradient(180deg, var(--wrap-green-bg) 15%, var(--wrap-gray-bg
 }
 
 .app-container {
-    border: 1px solid black;
     width: 80%;
     /* height: 95%; */
     /* margin: 0 auto; */
@@ -65,20 +68,11 @@ background: linear-gradient(180deg, var(--wrap-green-bg) 15%, var(--wrap-gray-bg
 .chats-col {
     width: 30%;
     height: calc(100vh - var(--wrapper-padding-tb));
-    /* height: 100vh; */
-    /* debug */
-    border: 1px solid black;
-    background-color: blueviolet;
-    /* overflow-y: scroll; */
 }
 
 .convo-col {
     width: 70%;
-    /* debug */
-    border: 1px solid black;
-    background-color: green;
     height: calc(100vh - var(--wrapper-padding-tb));
-    /* height: 100vh; */
 }
 
 .flex {
@@ -97,7 +91,7 @@ body {
     justify-content: space-between;
     padding: var(--header-padding);
 }
-/* 
+
 
 
 /* BUTTONS */
@@ -295,7 +289,6 @@ body {
 
     .chat-container {
         height: calc(100% - var(--header-height)); 
-        /* overflow-y: scroll; */
     }
 }
 
